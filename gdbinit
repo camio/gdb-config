@@ -5,6 +5,7 @@ set verbose off
 set print thread-events off
 set history save on
 set tui tab-width 4
+set tui compact-source on
 ## Skip over the implementation's stack frames on abort/etc.
 if !$_isvoid($_any_caller_matches)
     define hook-stop
@@ -13,3 +14,5 @@ if !$_isvoid($_any_caller_matches)
         end
     end
 end
+tui enable
+focus cmd
